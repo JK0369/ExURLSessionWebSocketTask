@@ -68,6 +68,7 @@ final class WebSocket: NSObject {
   
   func closeWebSocket() {
     self.webSocketTask = nil
+    self.timer?.invalidate()
     self.onReceiveClosure = nil
     self.delegate = nil
   }
